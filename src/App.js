@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import kevin from './kevin_3.jpeg';
+import './App.css';
 
 function GroundhogDayCounter() {
   const [days, setDays] = useState(0);
@@ -8,7 +10,7 @@ function GroundhogDayCounter() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const groundhogDay = new Date("January 28, 2023 09:00:00").getTime();
+      const groundhogDay = new Date("April 3, 2023 08:00:00").getTime();
       const now = new Date().getTime();
       const distance = groundhogDay - now;
 
@@ -28,6 +30,9 @@ function GroundhogDayCounter() {
   }, []);
 
   return (
+    <div className="App">
+      <header className="App-header">
+        <img src={kevin} className="App-logo" alt="logo" />
     <div>
       <h1>Countdown to Kevin:</h1>
       <h2>{days} days {hours} hours {minutes} minutes {seconds} seconds</h2>
@@ -35,6 +40,9 @@ function GroundhogDayCounter() {
       <h1>Don't say no</h1>
       <h1>In the arena ≠ friends</h1>
     </div>
+  </header>
+    </div>
+    
   );
 }
 
